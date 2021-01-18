@@ -1,0 +1,29 @@
+nav {
+  background-color: white;
+}
+
+ul {
+  margin: 0;
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+}
+
+li {
+  padding: 1em .5em 1em .5em;
+  transition: .5s;
+}
+
+li:hover {
+  color: white;
+  background-color: var(--primary);
+}
+
+li:hover a {
+    color: inherit;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}

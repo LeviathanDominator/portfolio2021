@@ -1,0 +1,12 @@
+<div class="container">
+  <div>
+    <h2>¡Hola!</h2>
+    <p>Mi nombre es <strong *ngIf="fullName">{{fullName}}</strong>. Tengo <ng-container *ngIf="age">{{age}}</ng-container> años y soy desarrollador de aplicaciones y páginas web.</p>
+  </div>
+  <div class="right">
+    <img *ngIf="fullName && profilePicture" src="{{profilePicture}}" alt="{{fullName}}">
+  </div>
+  <ul>
+    <li *ngFor="let language of languages">{{language}}</li>
+  </ul>
+</div>

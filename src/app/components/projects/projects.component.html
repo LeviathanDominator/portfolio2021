@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Proyectos</h2>
+  <ul>
+    <li *ngFor="let project of pinnedProjects">
+      <a href="{{project.url}}">{{project.title}}</a>
+      <p>{{project.description}}</p>
+      <small>{{project.language}}</small>
+    </li>
+  </ul>
+  <ul>
+    <li *ngFor="let project of projects">
+      <a href="{{project.url}}">{{project.title}}</a>
+      <p>{{project.description}}</p>
+      <small>{{project.language}}</small>
+    </li>
+  </ul>
+</div>

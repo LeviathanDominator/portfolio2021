@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --margin: 10em;
+  --primary: #424141;
+  --secondary: #939393;
+}
+
+body {
+  margin: 0;
+  color: white;
+  background-color: var(--primary);
+}
+
+.container {
+  margin-top: 5em;
+  margin-left: var(--margin);
+}
