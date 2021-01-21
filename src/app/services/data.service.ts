@@ -7,31 +7,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  name = "Ismael";
-  firstSurname = "Reyes";
-  lastSurname = "Caballero";
   age: number;
-  email = "ismaelreyescaballero@gmail.com";
   phone = "601 004 609";
-  profilePicture = "../../assets/fotoperfil.png";
-  languages = ["Java", "Kotlin", "PHP", "JavaScript", "TypeScript"];
+  aboutMe = ["Estoy buscando trabajo como desarrollador, tanto de aplicaciones para escritorio y móviles como de paginas web.", "No tengo experiencia laboral, pero he estado trabajando en diversos proyectos personales con distintas tecnologías para mejorar mis conocimientos de programación.", "Me entusiasma la programación; siempre estoy aprendiendo nuevas tecnologías y tengo mucha imaginación. Puedo trabajar en equipo y aportar nuevas ideas a los proyectos.", "Además, tengo disponibilidad absoluta para viajar a cualquier lugar de España."];
+  courses = ["Desarrollo de Aplicaciones Multiplataforma 2018 - 2020", "Bachillerato de Ciencias 2016 - 2018"];
+  languages = ["Java", "Kotlin", "PHP", "JavaScript", "TypeScript", "Python", "SQL"];
+  frameworks = ["AngularJS", "Ionic", "React", "Spring", "Symfony"]
   projects: Project[] = [
-    new Project("Pong", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "https://github.com/LeviathanDominator/Pong", this.languages[3]),
-    new Project("Proyecto Final de DAM", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "https://github.com/LeviathanDominator/ProyectoFinal", this.languages[4]),
+    new Project("Pong", "Utilizando el framework P5.js he creado un juego de Pong muy sencillo para dos jugadores. ¡Pulsa en el botón para jugarlo!", "https://github.com/LeviathanDominator/Pong", this.languages[3]),
+    new Project("Proyecto Final de DAM", "Mi idea para el proyecto de fin de grado consiste en una aplicación sobre videojuegos cuyo objetivo es filtrarlos no solo por plataforma o género, sino también por tipos de micropagos. Actualmente gran cantidad de videojuegos dispone de métodos de pago adicionales a la compra del juego en sí para agregar contenido a dicho videojuego. Este método de categorización puede resultar útil a las personas que quieran tener una experiencia completa o padres que preocupados porque sus hijos puedan utilizar el dinero de su tarjeta para comprar contenido digital adicional. Esta aplicación utiliza un sistema de sugerencias para que los usuarios apliquen las etiquetas correspondientes a un videojuego, de esa forma la información se actualizará gracias al aporte de los usuarios que utilicen la aplicación. Además, se pueden crear y gestionar listas de videojuegos personalizadas para cada usuario, y tiene un sistema de mensajería para que los usuarios se puedan comunicar entre ellos.", "https://github.com/LeviathanDominator/ProyectoFinal", this.languages[4]),
   ];
-  url = "https://api.github.com/users/LeviathanDominator/repos";
+  url = "https://api.github.com/users/LeviathanDominator";
 
   constructor(private http: HttpClient) {
     this.age = this.calculateAge(1992, 8, 7);
   }
 
-  getProjects() {
+  getProfileData() {
     return this.http.get(`${this.url}`).pipe();
   }
 
-  // Returns full name.
-  getFullName() {
-    return [this.name, this.firstSurname, this.lastSurname].join(' ');
+  getProjects() {
+    return this.http.get(`${this.url}/repos`).pipe();
   }
 
   // Logic to determine my current age.

@@ -5,6 +5,12 @@
   --secondary: #939393;
 }
 
+/*@keyframes changeColors {
+    0%   {background-color: var(--primary);}
+    50%  {background-color: gray;}
+    100% {background-color: var(--primary);}
+}*/
+
 body {
   margin: 0;
   color: white;

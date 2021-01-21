@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Contacto</h2>
   <p>Pueden contactar conmigo a través de mi correo electrónico o llamar a mi teléfono móvil.</p>
-  <a *ngIf="email" href="mailto:{{email}}">Envíame un correo</a>
-  <p *ngIf="email">{{email}}</p>
-  <p *ngIf="phone">{{phone}}</p>
+  <p *ngIf="email">Dirección de correo electrónico: {{email}}</p>
+  <p *ngIf="phone">Teléfono de contacto: {{phone}}</p>
+  <button type="button" class="btn btn-outline-primary" *ngIf="email"><a href="mailto:{{email}}">Envíame un correo</a></button>
 </div>

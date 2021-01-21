@@ -8,11 +8,17 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ContactComponent implements OnInit {
 
-  private email: string;
-  private phone: string;
+  email: string;
+  phone: string;
 
   constructor(private dataService: DataService) {
-    this.email = dataService.email;
+    this.dataService.getProfileData().subscribe(data => {
+      if (data["email"]){
+      this.email = data["email"];
+    } else {
+      this.email = "ismaelreyescaballero@gmail.com";
+    }
+    });
     this.phone = dataService.phone;
   }
 

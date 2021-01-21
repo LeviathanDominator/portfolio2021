@@ -1,12 +1,33 @@
 <div class="container">
   <div>
     <h2>¡Hola!</h2>
-    <p>Mi nombre es <strong *ngIf="fullName">{{fullName}}</strong>. Tengo <ng-container *ngIf="age">{{age}}</ng-container> años y soy desarrollador de aplicaciones y páginas web.</p>
+    <p>Mi nombre es <strong>{{name}}</strong>. Tengo {{age}} años y soy desarrollador de aplicaciones y páginas web.</p>
+    <p>Actualmente resido en {{location}}.</p>
+    <p *ngFor="let line of aboutMe">{{line}}</p>
   </div>
   <div class="right">
-    <img *ngIf="fullName && profilePicture" src="{{profilePicture}}" alt="{{fullName}}">
+    <img src="{{profilePicture}}" alt="Foto de perfil de {{name}}" title="Foto de perfil de {{name}}">
+    <div class="links">
+      <a href="{{twitterUrl}}" title="Enlace a la cuenta de Twitter de {{name}}">
+        <fa-icon [icon]="twitter"></fa-icon>
+      </a>
+      <a href="{{githubUrl}}" title="Enlace a la página de GitHub de {{name}}">
+        <fa-icon [icon]="github"></fa-icon>
+      </a>
+    </div>
   </div>
-  <ul>
-    <li *ngFor="let language of languages">{{language}}</li>
-  </ul>
+  <div>
+    <h3>Estudios</h3>
+    <ul>
+      <li *ngFor="let course of courses">{{course}}</li>
+    </ul>
+    <h3>Lenguajes de programación</h3>
+    <ul>
+      <li *ngFor="let language of languages">{{language}}</li>
+    </ul>
+    <h3>Frameworks</h3>
+    <ul>
+      <li *ngFor="let framework of frameworks">{{framework}}</li>
+    </ul>
+  </div>
 </div>

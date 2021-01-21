@@ -1,3 +1,10 @@
+@keyframes rainbow {
+    25%   {border-color: blue;}
+    50%  {border-color: lightgreen;}
+    75%   {border-color: yellow;}
+    100% {border-color: red);}
+}
+
 ul {
   display: grid;
 }
@@ -8,4 +15,25 @@ li {
 
 a {
   color: white;
+}
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  color: black;
+  margin: .5em;
+  border-style: solid;
+  border-color: gray;
+  border-width: 3px;
+  transition: all 1s;
+}
+
+.card:hover {
+  border-color: red;
+  transform: scale(1.1);
+  animation: rainbow 5s infinite;
 }

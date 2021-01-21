@@ -9,20 +9,27 @@ import { Project } from 'src/app/models/project.model';
 })
 export class ProjectsComponent implements OnInit {
 
-  private pinnedProjects = [];
-  private projects = [];
+  pinnedProjects = [];
+  projects = [];
 
   constructor(private dataService: DataService) {
     this.pinnedProjects = dataService.projects;
     dataService.getProjects().subscribe(projects => {
-      projects.forEach(project => {
-        console.log(project);
-        this.projects.push(new Project(project["name"], project["description"], project["url"], project["language"]));
-      });
+      for (let key of Object.keys(projects)) {
+        var project = projects[key];
+        if (!project["private"]){ // Hides private projects
+          this.projects.push(new Project(project["name"], project["description"], project["html_url"], project["language"], project["updated_at"]));
+        }
+      }
+      this.sortByUpdatedDate();
     });
   }
 
   ngOnInit() {
+  }
+
+  private sortByUpdatedDate() {
+    this.projects.sort((a: Project, b: Project) => b.getUpdatedAt().getTime() - a.getUpdatedAt().getTime());
   }
 
 }

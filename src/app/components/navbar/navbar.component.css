@@ -27,3 +27,7 @@ a {
   color: var(--primary);
   text-decoration: none;
 }
+
+fa-icon{
+  margin-right: .2em;
+}
