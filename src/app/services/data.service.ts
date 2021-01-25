@@ -7,10 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
+  underConstruction = false; // Shows a warning if set as true.
+
   age: number;
   phone = "601 004 609";
   aboutMe = ["Estoy buscando trabajo como desarrollador, tanto de aplicaciones para escritorio y móviles como de paginas web.", "No tengo experiencia laboral, pero he estado trabajando en diversos proyectos personales con distintas tecnologías para mejorar mis conocimientos de programación.", "Me entusiasma la programación; siempre estoy aprendiendo nuevas tecnologías y tengo mucha imaginación. Puedo trabajar en equipo y aportar nuevas ideas a los proyectos.", "Además, tengo disponibilidad absoluta para viajar a cualquier lugar de España."];
-  courses = ["Desarrollo de Aplicaciones Multiplataforma 2018 - 2020", "Bachillerato de Ciencias 2016 - 2018"];
+  courses = ["Educación Secundaria Obligatoria 2005 - 2009", "Sistemas Microinformáticos y Redes 2009 - 2013", "Bachillerato de Ciencias 2016 - 2018", "Desarrollo de Aplicaciones Multiplataforma 2018 - 2020"];
   languages = ["Java", "Kotlin", "PHP", "JavaScript", "TypeScript", "Python", "SQL"];
   frameworks = ["AngularJS", "Ionic", "React", "Spring", "Symfony"]
   projects: Project[] = [

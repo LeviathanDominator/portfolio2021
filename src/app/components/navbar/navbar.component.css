@@ -1,5 +1,6 @@
 nav {
   background-color: white;
+  margin-bottom: .7em;
 }
 
 ul {
@@ -30,4 +31,13 @@ a {
 
 fa-icon{
   margin-right: .2em;
+}
+
+.wip {
+  color: black;
+  text-align: center;
+  border-style: solid;
+  border-color: #ffff66;
+  background-color: #ffff99;
+  margin: 0;
 }

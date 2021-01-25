@@ -1,13 +1,14 @@
 <nav>
     <ul>
       <li>
-        <a routerLink="/home"><fa-icon [icon]="homeIcon"></fa-icon>Inicio</a>
+        <a routerLink="/"><fa-icon [icon]="homeIcon"></fa-icon>Inicio</a>
       </li>
-      <li>
+      <!--<li>
         <a routerLink="/projects"><fa-icon [icon]="projectsIcon"></fa-icon>Proyectos</a>
-      </li>
+      </li>-->
       <li>
         <a routerLink="/contact"><fa-icon [icon]="contactIcon"></fa-icon>Contacto</a>
       </li>
     </ul>
+    <p *ngIf="underConstruction" class="wip"><fa-icon [icon]="warningIcon"></fa-icon>Esta web se encuentra actualmente en construcción.</p>
 </nav>
