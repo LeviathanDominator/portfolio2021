@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  underConstruction = false; // Shows a warning if set as true.
+  underConstruction = true; // Shows a warning if set as true.
 
   age: number;
   phone = "601 004 609";

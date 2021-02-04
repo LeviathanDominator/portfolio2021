@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --margin: 10em;
-  --primary: #424141;
-  --secondary: #939393;
+  --primary: #424141; /* Dark gray */
+  --secondary: #939393; /* Light gray */
+  --tertiary: #00001a; /* Dark blue */
 }
 
 /*@keyframes changeColors {
@@ -14,10 +14,11 @@
 body {
   margin: 0;
   color: white;
-  background-color: var(--primary);
+  background: linear-gradient(var(--primary), var(--tertiary));
 }
 
 .container {
-  margin-top: 5em;
-  margin-left: var(--margin);
+  min-height: 100vh;
+  margin: auto;
+  margin-top: 2em;
 }

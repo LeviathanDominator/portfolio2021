@@ -7,14 +7,40 @@
 
 ul {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(min-content, max-content);
+  align-items: stretch;
+  list-style: none;
 }
 
 li {
-
+  margin-top: auto;
+  margin-bottom: auto;
+  align-self: stretch;
 }
 
-a {
+li a {
   color: white;
+  text-decoration: none;
+}
+
+.project {
+  padding: .7em;
+  margin: .7em;
+  border-radius: .5em;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 2px;
+  background-color: #4f4f4f;
+  transition: all .1s;
+}
+
+.project:hover {
+  border-color: #f8ff29;
+}
+
+h5 {
+  font-weight: bold;
 }
 
 .cards{

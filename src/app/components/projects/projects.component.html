@@ -1,6 +1,5 @@
 <div class="container">
-  <h2>Proyectos</h2>
-
+<!--  <h2>Proyectos</h2>
 <div class="cards">
   <div *ngFor="let project of pinnedProjects" class="card" style="width: 18rem;">
     <div class="card-body">
@@ -13,10 +12,19 @@
     </div>
   </div>
 </div>
+-->
 <h2>Listado de proyectos</h2>
+<p *ngIf="projects.length > 0">A continuación le muestro un listado con {{projects.length}} proyectos que he desarrollado en distintos lenguajes de programación. Clickee sobre uno de ellos y le llevará a su correspondiente repositorio de GitHub para ver el código fuente.</p>
+<p *ngIf="projects.length == 0">Ha habido un problema a la hora de cargar la lista de proyectos. Por favor, visite <a href="https://github.com/LeviathanDominator">mi perfil de GitHub</a> para poder visualizarlos desde ahí.</p>
 <ul>
   <li *ngFor="let project of projects">
-    <a href="{{project.url}}">{{project.title}} - {{project.language}}</a>
+    <a href="{{project.url}}">
+      <div class="project">
+        <h5>{{project.title}}</h5>
+        <small>Lenguaje: {{project.language}}</small>
+        <p>{{project.description}}</p>
+      </div>
+    </a>
     <!--<p>{{project.updated_at}}</p>-->
   </li>
 </ul>
